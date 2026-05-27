@@ -1,0 +1,315 @@
+################
+# MTR - Shieldmaiden Ward Event
+################
+
+namespace = MTR_SWE
+
+#witch.1001-1999 - Guardian coverts ward
+#witch.2001-2899 - Convert to witchcraft scheme
+#witch.2900-2999 - Reveal as witch interaction
+#witch.3001-3999 - Witch ritual activity events
+#witch.4001-4999 - Witch ongoing events
+#
+
+##########################
+# GUARDIAN TRAINS MARTIAL WARD
+##########################
+
+# Hidden Intake Event
+MTR_SWE.1001 = {
+	hidden = yes
+	
+	# Mod Content "pack"
+	content_source = MTR_SWE
+	
+	trigger = {
+		MTR_SWE_trigger_is_valid_ward_gender = yes
+		OR = {
+			# Either training specifically martial...
+			has_focus = education_martial
+
+			# ...or has enough traits/stats to warrant it...
+			calc_true_if = {
+				amount >= 3
+				has_trait = arrogant
+				has_trait = eccentric
+				has_trait = brave
+				has_trait = ambitious
+				has_trait = vengeful # Culture or Religion check?
+				has_trait = wrathful
+				has_trait = sadistic # Culture or Religion check?
+				has_trait = strong
+				has_trait = physique_good_3
+				has_trait = physique_good_2
+				#The child comes from a culture that enables high prowess to ignore restrictions and the child is strong enough
+				OR = {
+					AND = {
+						prowess >= 10
+						culture = { has_cultural_parameter = high_prowess_ignores_knight_restrictions }
+						NOT = { culture = { has_cultural_parameter = minimum_prowess_for_knights } }
+					}
+					AND = {
+						prowess >= 12
+						culture = {
+							has_cultural_parameter = high_prowess_ignores_knight_restrictions
+							has_cultural_parameter = minimum_prowess_for_knights
+						}
+					}
+
+				}
+			}
+			# ...or has a parent with the trait 
+			any_relation = {
+				type = parent
+				has_trait = shieldmaiden
+			}
+		}
+		OR = { #Is being trained/taught to some degree
+			any_relation = {
+				type = guardian
+			}
+			exists = court_owner.court_position:court_tutor_court_position
+		}
+	}
+
+	immediate = {
+		save_scope_as = child
+		
+		#Fire Event From Guardian's POV
+		IF = {
+			limit = {
+				any_relation = {
+					type = guardian
+				}
+			}
+			random_relation = {
+				type = guardian
+				trigger_event = MTR_SWE.1002
+			}
+		}
+		#Fire Event From Tutor's POV
+		ELSE = {
+			#At this point, if there is no guardian we know it should be the tutor
+			court_owner.court_position:court_tutor_court_position ?= {
+				trigger_event = MTR_SWE.1002
+			}
+		}
+	}
+}
+
+
+# Guardian POV
+MTR_SWE.1002 = {
+	type = character_event
+	title = MTR_SWE.1002.t
+	desc  = MTR_SWE.1002.desc
+
+	# Mod Content "pack"
+	content_source = MTR_SWE
+
+	left_portrait = scope:child
+
+	immediate = { save_scope_as = guardian }
+
+
+	#Allow them to squire
+	option = {
+		name = MTR_SWE.1002.a
+
+		#Duel if child is AI
+		if = {
+			limit = { scope:child = { is_ai = yes } }
+			duel = {
+				skills = { martial prowess }
+				target = scope:child
+				30 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = 2.5
+					}
+					opinion_modifier = {
+						who = scope:child
+						opinion_target = scope:guardian
+						multiplier = 0.25
+						step = 5
+					}
+					modifier = { #if guardian is a shieldperson, bump odds
+						has_trait = shieldmaiden
+						add = 20
+					}
+					modifier = {
+						scope:child = { has_trait = brave }
+						add = 20
+					}
+					modifier = {
+						scope:child = { has_trait = ambitious }
+						add = 10
+					}
+					modifier = {
+						scope:child = { has_trait = eccentric }
+						add = 5
+					}
+					#TODO: put check for religious tenets like human sacrifice or sadistic as virtue
+					#TODO: put check for religious tenets like human sacrifice or vengeful as virtue
+					desc = MTR_SWE_child_squiring_success_effect.desc
+					MTR_SWE_child_squiring_success_effect = yes
+				}
+				70 = {
+					compare_modifier = {
+						value = scope:duel_value
+						multiplier = -2.5
+					}
+					opinion_modifier = {
+						who = scope:child
+						opinion_target = scope:guardian
+						multiplier = -0.25
+						step = 5
+					}
+					modifier = { #Sadistic tendencies might be off-putting #TODO: put check for religious tenets like human sacrifice or sadistic as virtue
+						scope:child = { has_trait = sadistic }
+						add = 5
+					}
+					modifier = { #Arrogant people will have a tough time squiring
+						scope:child = { has_trait = arrogant }
+						add = 5
+					}
+					modifier = { #Shy afraid of prolonged time with someone as a squire
+						scope:child = { has_trait = shy }
+						add = 10
+					}
+					modifier = { #Cowards don't want to fight
+						scope:child = { has_trait = craven }
+						add = 25
+					}
+					desc = MTR_SWE_child_squiring_failure_effect.desc
+					MTR_SWE_child_squiring_failure_effect = yes
+				}
+			}
+		}
+		else = { #if child is not AI, child has a choice (Trigger event from their POV)
+			show_as_tooltip = {
+				random_list = {
+					1 = {
+						show_chance = no
+						desc = MTR_SWE_child_squiring_success_effect.desc
+						MTR_SWE_child_squiring_success_effect = yes
+					}
+					1 = {
+						show_chance = no
+						desc = MTR_SWE_child_squiring_failure_effect.desc
+						MTR_SWE_child_squiring_failure_effect = yes
+					}
+				}
+			}
+
+			scope:child = {
+				trigger_event = MTR_SWE.1003
+			}
+		}
+		
+		ai_chance = {
+			# Chance without the guardian being of a culture that allows shieldmaidens (1-to-1 odds)
+			base = 25
+
+			# If the guardian also belongs to a culture with shieldmaidens, make the chance higher (3-to-1 odds, instead of 1-to-1)
+			modifier = {
+				add = 50
+				culture = { has_cultural_parameter = has_access_to_shieldmaidens }
+			}
+
+			# Just and Compassionate willing to entertain ward's unorthodox ambitions
+			modifier = {
+				add = 25
+				has_trait = compassionate
+			}
+			modifier = {
+				add = 25
+				has_trait = just
+			}
+			# Eccentric likes breaking Status Quo
+			modifier = {
+				add = 25
+				has_trait = eccentric
+			}
+		}
+	}
+
+	# Don't allow them to squire
+	# Shieldmaidens will NEVER stop their wards from squiring if they are interested
+	option = {
+		name = MTR_SWE.1002.b
+
+		ai_chance = {
+			base = 25
+
+			modifier = {
+				add = -1000
+				has_trait = shieldmaiden
+			}
+		}
+	}
+}
+
+# Ward POV (Human-Only)
+MTR_SWE.1002 = {
+	type = character_event
+	title = MTR_SWE.1003.t
+	desc  = MTR_SWE.1003.desc
+
+	# Mod Content "pack"
+	content_source = MTR_SWE
+
+	left_portrait = scope:guardian
+	
+	# Attempt to squire
+	option = {
+		name = MTR_SWE.1003.a
+
+		duel = {
+			skills = {martial prowess}
+			value = decent_skill_rating
+
+			# Succeed
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = 2.5
+					min = -49
+				}
+
+				MTR_SWE_child_squiring_success_effect = yes
+			}
+			# Fail
+			50 = {
+				compare_modifier = {
+					value = scope:duel_value
+					multiplier = -2.5
+					min = -49
+				}
+
+				MTR_SWE_child_squiring_failure_effect = yes
+			}
+
+		}
+		
+	}
+
+	# Accept Social Norms
+	option = {
+		name = MTR_SWE.1003.b
+
+		#Stress relief
+		stress_impact = {
+			#Gains
+			brave     = massive_stress_impact_gain
+			arrogant  = major_stress_impact_gain
+			wrathful  = minor_stress_impact_gain
+			eccentric = minor_stress_impact_gain
+			ambitious = minor_stress_impact_gain
+			#Losses
+			lazy      = major_stress_impact_loss
+			shy       = minor_stress_impact_loss
+			craven    = massive_stress_impact_loss
+		}
+	}
+}

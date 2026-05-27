@@ -1,0 +1,42 @@
+﻿MTR_ATS_GR = {
+	default = MTR_ATS_GR_00
+
+	# What categories this game rule belongs too
+	categories = {
+		culture MTR
+	}
+
+	# Default, no flag, no effect.
+	# Tradition limit is as normal
+	MTR_ATS_GR_00 = {}
+ 
+	MTR_ATS_GR_01 = {}
+
+	MTR_ATS_GR_02 = {}
+
+	MTR_ATS_GR_03 = {}
+
+	MTR_ATS_GR_04 = {}
+
+	MTR_ATS_GR_05 = {}
+
+	MTR_ATS_GR_06 = {}
+
+	MTR_ATS_GR_07 = {}
+
+	MTR_ATS_GR_08 = {}
+
+	MTR_ATS_GR_09 = {}
+
+	MTR_ATS_GR_10 = {}
+
+	MTR_ATS_GR_11 = {}
+
+	MTR_ATS_GR_12 = {}
+
+	MTR_ATS_GR_13 = {}
+
+	MTR_ATS_GR_14 = {}
+
+	MTR_ATS_GR_15 = {}
+}

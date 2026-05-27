@@ -1,0 +1,43 @@
+# Triggered from `on_action/childhood_on_actions.txt`
+on_15th_birthday = {
+	on_actions = {
+		MTR_SWE_actions
+	}
+}
+
+
+# Custom On-Action
+MTR_SWE_actions = {
+	trigger = {	
+		has_fp1_dlc_trigger = yes
+		culture = { has_cultural_parameter = has_access_to_shieldmaidens }
+		trigger_if = { # Determined by Cultural Pillars
+			limit = { has_dlc_feature = diverge_culture }
+			OR = {
+				AND = {
+					is_female = yes
+					culture = { has_cultural_parameter = martial_custom_male_only_combatant }
+				}
+				AND = {
+					is_male = yes
+					culture = { has_cultural_parameter = martial_custom_female_only_combatant }
+				}
+			}
+		}
+		trigger_else = {
+			OR = { # Does not have the Royal Court and thus combatant is governed by faith
+				AND = {
+					is_female = yes
+					faith = { has_doctrine_parameter = combatant_must_be_male_if_no_roco }
+				}
+				AND = {
+					is_male = yes
+					faith = { has_doctrine_parameter = combatant_must_be_female_if_no_roco }
+				}
+			}
+		}
+	}
+	events = {
+		MTR_SWE.1001 #Hidden Event
+	}
+}

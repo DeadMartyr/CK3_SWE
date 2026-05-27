@@ -1,0 +1,73 @@
+# Handles toast message for when a ward tries to squire as a shieldmaiden and succeeds
+MTR_SWE_child_squiring_success_effect = {
+	scope:child = {
+		# Effects for child
+		add_trait = shieldmaiden
+		stress_impact = {
+			brave     = major_stress_impact_loss
+			arrogant  = minor_stress_impact_loss
+			wrathful  = miniscule_stress_impact_loss
+			eccentric = miniscule_stress_impact_loss
+			ambitious = miniscule_stress_impact_loss
+		}
+		# Only people that care are the house-head and the parents
+		house = {
+			house_head = {
+				add_to_list = MTR_SWE_success_message
+			}
+		}
+		every_parent = {
+			add_to_list = MTR_SWE_success_message
+		}
+	}
+	every_in_list = {
+		list = MTR_SWE_success_message
+		limit = {
+			this != scope:child
+		}
+		send_interface_toast = {
+			type = event_toast_effect_good
+			title = MTR_SWE.1001.message
+			left_icon = scope:child
+
+			show_as_tooltip = {
+				scope:child = {
+					add_trait_force_tooltip = shieldmaiden
+				}
+			}
+		}
+	}
+}
+
+# Handles toast message for when a ward tries to squire as a shieldmaiden and FAILS
+MTR_SWE_child_squiring_failure_effect = {
+	# Only people that care are the house-head and the parents
+	scope:child = {
+		stress_impact = medium_stress_impact_gain
+		house = {
+			house_head = {
+				add_to_list = MTR_SWE_failure_message
+			}
+		}
+		every_parent = {
+			add_to_list = MTR_SWE_failure_message
+		}
+	}
+	every_in_list = {
+		list = MTR_SWE_failure_message
+		limit = {
+			this != scope:child
+		}
+		send_interface_toast = {
+			type = event_toast_effect_bad
+			title = MTR_SWE.1001.message
+			left_icon = scope:child
+
+			show_as_tooltip = {
+				scope:child = {
+					stress_impact = medium_stress_impact_gain
+				}
+			}
+		}
+	}
+}
