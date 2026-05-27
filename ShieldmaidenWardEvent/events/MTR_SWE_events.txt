@@ -20,7 +20,7 @@ MTR_SWE.1001 = {
 	hidden = yes
 	
 	# Mod Content "pack"
-	content_source = MTR_SWE
+	content_source = dlc_MTR_SWE
 	
 	trigger = {
 		MTR_SWE_trigger_is_valid_ward_gender = yes
@@ -105,7 +105,7 @@ MTR_SWE.1002 = {
 	desc  = MTR_SWE.1002.desc
 
 	# Mod Content "pack"
-	content_source = MTR_SWE
+	content_source = dlc_MTR_SWE
 
 	left_portrait = scope:child
 
@@ -257,7 +257,7 @@ MTR_SWE.1002 = {
 	desc  = MTR_SWE.1003.desc
 
 	# Mod Content "pack"
-	content_source = MTR_SWE
+	content_source = dlc_MTR_SWE
 
 	left_portrait = scope:guardian
 	

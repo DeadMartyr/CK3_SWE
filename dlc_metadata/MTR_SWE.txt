@@ -1,0 +1,8 @@
+dlc_MTR_SWE = {
+    key = "Martyr's Tweaks - Shieldmaiden Ward Event"
+    type = minor
+    priority = 1000
+
+    #To enable checkmark with the helper mod
+    features = { fake_dlc }
+}
