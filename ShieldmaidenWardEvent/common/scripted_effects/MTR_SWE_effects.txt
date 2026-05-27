@@ -4,7 +4,7 @@ MTR_SWE_child_squiring_success_effect = {
 		# Effects for child
 		add_trait = shieldmaiden
 		stress_impact = {
-			brave     = major_stress_impact_loss
+			brave     = medium_stress_impact_loss
 			arrogant  = minor_stress_impact_loss
 			wrathful  = miniscule_stress_impact_loss
 			eccentric = miniscule_stress_impact_loss

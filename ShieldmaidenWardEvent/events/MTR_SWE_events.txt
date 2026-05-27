@@ -58,10 +58,10 @@ MTR_SWE.1001 = {
 
 				}
 			}
-			# ...or has a parent with the trait 
-			any_relation = {
-				type = parent
-				has_trait = shieldmaiden
+			# ...or has a parent with the trait
+			OR = {
+				father = {has_trait = shieldmaiden}
+				mother = {has_trait = shieldmaiden}
 			}
 		}
 		OR = { #Is being trained/taught to some degree
@@ -135,19 +135,19 @@ MTR_SWE.1002 = {
 					}
 					modifier = { #if guardian is a shieldperson, bump odds
 						has_trait = shieldmaiden
-						add = 20
+						add = 25
 					}
 					modifier = {
 						scope:child = { has_trait = brave }
-						add = 20
+						add = 25
 					}
 					modifier = {
 						scope:child = { has_trait = ambitious }
-						add = 10
+						add = 15
 					}
 					modifier = {
 						scope:child = { has_trait = eccentric }
-						add = 5
+						add = 10
 					}
 					#TODO: put check for religious tenets like human sacrifice or sadistic as virtue
 					#TODO: put check for religious tenets like human sacrifice or vengeful as virtue
@@ -251,7 +251,7 @@ MTR_SWE.1002 = {
 }
 
 # Ward POV (Human-Only)
-MTR_SWE.1002 = {
+MTR_SWE.1003 = {
 	type = character_event
 	title = MTR_SWE.1003.t
 	desc  = MTR_SWE.1003.desc
@@ -301,15 +301,15 @@ MTR_SWE.1002 = {
 		#Stress relief
 		stress_impact = {
 			#Gains
-			brave     = massive_stress_impact_gain
-			arrogant  = major_stress_impact_gain
-			wrathful  = minor_stress_impact_gain
-			eccentric = minor_stress_impact_gain
-			ambitious = minor_stress_impact_gain
+			brave     = major_stress_impact_gain
+			arrogant  = medium_stress_impact_gain
+			wrathful  = miniscule_stress_impact_gain
+			eccentric = miniscule_stress_impact_gain
+			ambitious = miniscule_stress_impact_gain
 			#Losses
-			lazy      = major_stress_impact_loss
+			lazy      = medium_stress_impact_loss
 			shy       = minor_stress_impact_loss
-			craven    = massive_stress_impact_loss
+			craven    = major_stress_impact_loss
 		}
 	}
 }
