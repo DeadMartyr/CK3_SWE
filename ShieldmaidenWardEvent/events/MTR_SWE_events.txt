@@ -259,7 +259,10 @@ MTR_SWE.1003 = {
 	# Mod Content "pack"
 	content_source = dlc_MTR_SWE
 
-	left_portrait = scope:guardian
+	left_portrait = {
+		character = scope:guardian
+		animation = marshal_random_weapon
+	}
 	
 	# Attempt to squire
 	option = {
