@@ -1,0 +1,43 @@
+﻿l_english:
+ #ModInfo
+ MTR_series_name:  "DeadMartyr's Tweaks"
+ MTR_series_short_name: "MTR"
+ MTR_series_desc:  "A collection of tweaks that are meant to be completely vanilla-friendly and overwrite no files."
+ MTR_series_name_w_desc_tt: "#T $MTR_series_name$#!\n$MTR_series_desc$"
+ MTR_SWE_mod_name: "Shieldmaiden Ward Event"
+ MTR_SWE_mod_short_name: "SWE"
+ MTR_SWE_mod_desc: "Mod that enables wards a chance to gain the shieldmaiden or shieldmaiden via an event on their 15th birthday.\nThis enables non-martial gender wards to get the Students of Knighthood traits upon reaching adulthood, if all other requirements are met.\nThe specific criteria is configurable via game-rule."
+ MTR_SWE_mod_name_w_desc_tt: "#T $MTR_SWE_mod_name$#!\n$MTR_SWE_mod_desc$"
+
+ #FakeDLC
+ dlc_MTR_SWE:0      "Martyr's Tweaks: Shieldmaiden Ward Event"
+ dlc_MTR_SWE_desc:0 "$MTR_SWE_mod_desc$"
+
+ #GAMERULES
+ game_rule_category_MTR: "#tooltip:MTR_series_name_w_desc_tt #color_goldy_yellow $MTR_series_short_name$#!#!"
+ rule_MTR_SWE_GR:0       "#tooltip:MTR_SWE_mod_name_w_desc_tt #color_goldy_yellow $MTR_SWE_mod_short_name$:#!#! $MTR_SWE_mod_name$"
+ setting_MTR_SWE_GR_default:0 "Default"
+ setting_MTR_ATS_GR_default_desc:0 "The event will be available to all wards with martial education OR wards with a parent who is a shieldperson OR wards with enough traits that align with knighthood or relevant militant faiths."
+ setting_MTR_ATS_GR_relaxed:0 "Relaxed"
+ setting_MTR_ATS_GR_01_desc:0 "The event will be available to ALL wards who are of a culture with access to shieldpersons."
+ setting_MTR_ATS_GR_deactivated:0 "Deactivated"
+ setting_MTR_ATS_GR_deactivated_desc:0 "The event will be disabled in all cases."
+
+ #EFFECTS
+ MTR_SWE_child_squiring_success_effect.desc:0 "Child has earned their place in the shieldwall!"
+ MTR_SWE_child_squiring_failure_effect.desc:0 "Child has proven that they aren't meant for combat."
+ MTR_SWE_self_squiring_success_effect.desc:0 "Child has earned their place in the shieldwall!"
+ MTR_SWE_self_squiring_failure_effect.desc:0 "Child has proven that they aren't meant for combat."
+
+ #EVENTS
+ MTR_SWE.1001.message:0 "Child Tries to become a shieldperson!"
+
+ MTR_SWE.1002.t:0    "Makings of a Warrior"
+ MTR_SWE.1002.desc:0 "Description of the event from the Guardian's POV"
+ MTR_SWE.1002.a:0    "Allow them to assist and squire in battle."
+ MTR_SWE.1002.b:0    "Things are the way that they are for a reason."
+
+ MTR_SWE.1003.t:0    "Dreams of Combat"
+ MTR_SWE.1003.desc:0 "Description of the event from the Ward's POV"
+ MTR_SWE.1003.a:0    "Let me stand in the shield wall!"
+ MTR_SWE.1003.b:0    "Perhaps things are the way that they are for a reason..."

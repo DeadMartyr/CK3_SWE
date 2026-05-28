@@ -103,11 +103,15 @@ MTR_SWE.1002 = {
 	type = character_event
 	title = MTR_SWE.1002.t
 	desc  = MTR_SWE.1002.desc
+	theme = martial
 
 	# Mod Content "pack"
 	content_source = dlc_MTR_SWE
 
-	left_portrait = scope:child
+	left_portrait = {
+		character = scope:child
+		animation = marshal_random_weapon
+	}
 
 	immediate = { save_scope_as = guardian }
 
@@ -255,6 +259,7 @@ MTR_SWE.1003 = {
 	type = character_event
 	title = MTR_SWE.1003.t
 	desc  = MTR_SWE.1003.desc
+	theme = martial
 
 	# Mod Content "pack"
 	content_source = dlc_MTR_SWE
@@ -280,6 +285,7 @@ MTR_SWE.1003 = {
 					min = -49
 				}
 
+				desc = MTR_SWE_self_squiring_success_effect.desc
 				MTR_SWE_child_squiring_success_effect = yes
 			}
 			# Fail
@@ -290,7 +296,8 @@ MTR_SWE.1003 = {
 					min = -49
 				}
 
-				MTR_SWE_child_squiring_failure_effect = yes
+				desc = MTR_SWE_self_squiring_failure_effect.desc
+				MTR_SWE_self_squiring_failure_effect = yes
 			}
 
 		}

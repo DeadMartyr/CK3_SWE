@@ -29,12 +29,6 @@ MTR_SWE_child_squiring_success_effect = {
 			type = event_toast_effect_good
 			title = MTR_SWE.1001.message
 			left_icon = scope:child
-
-			show_as_tooltip = {
-				scope:child = {
-					add_trait_force_tooltip = shieldmaiden
-				}
-			}
 		}
 	}
 }
