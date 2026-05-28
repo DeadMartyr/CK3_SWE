@@ -15,28 +15,56 @@
 
  #GAMERULES
  game_rule_category_MTR: "#tooltip:MTR_series_name_w_desc_tt #color_goldy_yellow $MTR_series_short_name$#!#!"
- rule_MTR_SWE_GR:0       "#tooltip:MTR_SWE_mod_name_w_desc_tt #color_goldy_yellow $MTR_SWE_mod_short_name$:#!#! $MTR_SWE_mod_name$"
- setting_MTR_SWE_GR_default:0 "Default"
- setting_MTR_ATS_GR_default_desc:0 "The event will be available to all wards with martial education OR wards with a parent who is a shieldperson OR wards with enough traits that align with knighthood or relevant militant faiths."
- setting_MTR_ATS_GR_relaxed:0 "Relaxed"
- setting_MTR_ATS_GR_01_desc:0 "The event will be available to ALL wards who are of a culture with access to shieldpersons."
- setting_MTR_ATS_GR_deactivated:0 "Deactivated"
- setting_MTR_ATS_GR_deactivated_desc:0 "The event will be disabled in all cases."
+
+ rule_MTR_SWE_eligibilty_GR:0 "#tooltip:MTR_SWE_mod_name_w_desc_tt #color_goldy_yellow $MTR_SWE_mod_short_name$:#!#! Eligible Wards"
+ setting_MTR_SWE eligibilty_GR_default:0      "Default"
+ setting_MTR_SWE_eligibilty_GR_default_desc:0 "The event will be available to all wards with martial education OR wards with a parent who is a shieldperson OR wards with enough traits that align with knighthood or relevant militant faiths."
+ setting_MTR_SWE_eligibilty_GR_relaxed:0      "Relaxed"
+ setting_MTR_SWE_eligibilty_GR_relaxed_desc:0 "The event will be available to ALL wards who are of cultures with shieldpersons."
+ setting_MTR_SWE_eligibilty_GR_deactivated:0      "Deactivated"
+ setting_MTR_SWE_eligibilty_GR_deactivated_desc:0 "The event will be disabled in all cases."
+
+ rule_MTR_SWE_odds_GR:0 "#tooltip:MTR_SWE_mod_name_w_desc_tt #color_goldy_yellow $MTR_SWE_mod_short_name$:#!#! Successful Duel Odds"
+ setting_MTR_SWE_odds_GR_normal:0      "Normal Odds"
+ setting_MTR_SWE_odds_GR_normal_desc:0 "The chances for successful attempts are unchanged. Not every ward is expected to succeed, especially without aligned traits, high prowess, or a capable guardian."
+ setting_MTR_SWE_odds_GR_increased:0      "Increased Odds"
+ setting_MTR_SWE_odds_GR_increased_desc:0 "The chances for successful attempts are increased. Most wards will have a good chance to succeed."
 
  #EFFECTS
- MTR_SWE_child_squiring_success_effect.desc:0 "Child has earned their place in the shieldwall!"
- MTR_SWE_child_squiring_failure_effect.desc:0 "Child has proven that they aren't meant for combat."
- MTR_SWE_self_squiring_success_effect.desc:0 "Child has earned their place in the shieldwall!"
- MTR_SWE_self_squiring_failure_effect.desc:0 "Child has proven that they aren't meant for combat."
+ MTR_SWE_child_squiring_success_effect.desc:0 "[child.GetNameNoTooltip|U] has earned their place in the shield-wall!"
+ MTR_SWE_child_squiring_failure_effect.desc:0 "[child.GetNameNoTooltip|U] has proven that they aren't meant for combat."
+ MTR_SWE_self_squiring_success_effect.desc:0  "[child.GetNameNoTooltip|U] has earned their place in the shield-wall!"
+ MTR_SWE_self_squiring_failure_effect.desc:0  "[child.GetNameNoTooltip|U] just isn't meant for combat."
 
  #EVENTS
+
+ #Guardian POV
  MTR_SWE.1001.message:0 "Child Tries to become a shieldperson!"
 
  MTR_SWE.1002.t:0    "Makings of a Warrior"
  MTR_SWE.1002.desc:0 "Description of the event from the Guardian's POV"
+ MTR_SWE.1002.desc.trait_intro:0          "Throughout your experiences with your [guardian.GetRelationToString( child )] [child.GetFirstName|U], it has become clear that [child.GetSheHe] has a temperament that may be worthy of battle; [child.GetHerHis|U]"
+ MTR_SWE.1002.desc.trait_arrogant:0       "audaciousness,"
+ MTR_SWE.1002.desc.trait_brave:0          "courage,"
+ MTR_SWE.1002.desc.trait_eccentric:0      "eccentricity,"
+ MTR_SWE.1002.desc.trait_ambitious:0      "ambition,"
+ MTR_SWE.1002.desc.trait_vengeful:0       "holy vengeance,"
+ MTR_SWE.1002.desc.trait_wrath:0          "wrath,"
+ MTR_SWE.1002.desc.trait_sadistic:0       "mercilessness,"
+ MTR_SWE.1002.desc.trait_strong:0         "strength,"
+ MTR_SWE.1002.desc.trait_ending_female:0  "and character all indicate the makings of a shieldmaiden.\n\n"
+ MTR_SWE.1002.desc.trait_ending_male:0    "and character all indicate the makings of a shieldswain.\n\n"
+ 
+ MTR_SWE.1002.desc.education_martial:0    "Through martial study and cultural customs, [child.GetFirstName] is granted the right to prove themselves to be capable enough to participate in combat.\n\n"
+ 
+ MTR_SWE.1002.desc.parents_legacy_intro_scared:0 "Despite their bouts of cowardice, young"
+ MTR_SWE.1002.desc.parents_legacy_intro_normal:0 "Young"
+ MTR_SWE.1002.desc.parents_legacy_ending:0       "[child.GetFirstName|U] has a legacy to uphold which calls [child.GetHerHim] to participate in the shield-wall.\n\n"
+
  MTR_SWE.1002.a:0    "Allow them to assist and squire in battle."
  MTR_SWE.1002.b:0    "Things are the way that they are for a reason."
 
+ #Ward POV
  MTR_SWE.1003.t:0    "Dreams of Combat"
  MTR_SWE.1003.desc:0 "Description of the event from the Ward's POV"
  MTR_SWE.1003.a:0    "Let me stand in the shield wall!"
