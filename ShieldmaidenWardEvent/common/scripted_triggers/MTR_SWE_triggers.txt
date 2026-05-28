@@ -32,3 +32,46 @@ MTR_SWE_trigger_is_valid_ward_gender = {
 		}
 	}
 }
+
+# Enough traits to warrant exception
+MTR_SWE_trigger_temperament = {
+	calc_true_if = {
+		amount >= 3
+		has_trait = arrogant
+		has_trait = eccentric
+		has_trait = brave
+		has_trait = ambitious
+		has_trait = vengeful # Culture or Religion check?
+		has_trait = wrathful
+		has_trait = sadistic # Culture or Religion check?
+		has_trait = strong
+		has_trait = physique_good_3
+		has_trait = physique_good_2
+	}
+}
+
+#The child comes from a culture that enables high prowess to ignore restrictions and the child is strong enough
+MTR_SWE_trigger_culture_allows_high_prowess = {
+	OR = {
+		AND = {
+			prowess >= 10
+			culture = { has_cultural_parameter = high_prowess_ignores_knight_restrictions }
+			NOT = { culture = { has_cultural_parameter = minimum_prowess_for_knights } }
+		}
+		AND = {
+			prowess >= 12
+			culture = {
+				has_cultural_parameter = high_prowess_ignores_knight_restrictions
+				has_cultural_parameter = minimum_prowess_for_knights
+			}
+		}
+	}
+}
+
+# Either Parent is a shieldperson
+MTR_SWE_trigger_either_parent_shieldperson = {
+	OR = {
+		father = {has_trait = shieldmaiden}
+		mother = {has_trait = shieldmaiden}
+	}
+}
