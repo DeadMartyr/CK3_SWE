@@ -211,11 +211,11 @@ MTR_SWE.1002 = {
 			limit = { scope:child = { is_ai = yes } }
 			duel = {
 				skills = { martial prowess }
-				value = high_skill_rating
+				value = decent_skill_rating
 				35 = {
 					compare_modifier = {
 						value = scope:duel_value
-						multiplier = 1.5
+						multiplier = 2
 					}
 					opinion_modifier = {
 						who = scope:child
@@ -254,7 +254,7 @@ MTR_SWE.1002 = {
 				65 = {
 					compare_modifier = {
 						value = scope:duel_value
-						multiplier = -1.5
+						multiplier = -2
 					}
 					opinion_modifier = {
 						who = scope:child
