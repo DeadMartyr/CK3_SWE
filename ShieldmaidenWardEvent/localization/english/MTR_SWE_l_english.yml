@@ -39,7 +39,8 @@
  #EVENTS
 
  #Guardian POV
- MTR_SWE.1001.message:0 "Child Tries to become a shieldperson!"
+ MTR_SWE.1001.message_good:0 "[child.GetFirstName|U] joins the shield-wall!"
+ MTR_SWE.1001.message_bad:0  "[child.GetFirstName|U] just isn't meant for combat..."
 
  MTR_SWE.1002.t:0    "Makings of a Warrior"
  MTR_SWE.1002.desc:0 "Description of the event from the Guardian's POV"
@@ -72,9 +73,9 @@
  MTR_SWE.1003.t:0    "Makings of a Warrior"
  MTR_SWE.1003.desc:0 "Description of the event from the Ward's POV"
 
- MTR_SWE.1003.start:0  "Often I find myself dreaming of standing on the battlefield. When I finish my studies early, I find a secluded spot and practice swinging a blade. I have been practicing for hours and been lost in thought - but that is broken as I sense someone behind me.\n\nI turn to see my guardian [guardian.GetFirstName|U] standing before me.  Before I can explain, [guardian.GetSheHe|U] speaks:\n\n"
- MTR_SWE.1003.start.culture_both:0 ""You show enough promise that I believe that you may be able to participate in battle," [guardian.GetSheHeNoTooltip|L] says, "Many notable warriors actually started as exceptions and have served their realms well; I will vouch for your capabilities if you wish to become one of those exceptions..."\n\n"
- MTR_SWE.1003.start.culture_child_only:0 ""While the idea is foreign to me I understand that you may wish to participate in battle," [guardian.GetSheHe|U] says, "You may be a [GetWomanMan|L]... but I have seen enough that I will vouch for your capabilities."\n\n"
+ MTR_SWE.1003.start:0  "Often I find myself dreaming of standing on the battlefield. When I finish my studies early, I find a secluded spot and practice swinging a blade. I have been practicing for hours and been lost in thought - but that is broken as I sense someone behind me.\n\nI turn to see my guardian [guardian.GetFirstName|U] standing before me.  Before I can explain, [guardian.GetSheHe|L] speaks:\n\n"
+ MTR_SWE.1003.start.culture_both:0 ""You show enough promise that I believe that you may be able to participate in battle," [guardian.GetSheHe|L] says, "Many notable warriors actually started as exceptions and have served their realms well; I will vouch for your capabilities if you wish to become one of those exceptions..."\n\n"
+ MTR_SWE.1003.start.culture_child_only:0 ""While the idea is foreign to me I understand that you may wish to participate in battle," [guardian.GetSheHe|L] says, "You may be a [GetWomanMan|L]... but I have seen enough that I will vouch for your capabilities."\n\n"
 
  MTR_SWE.1003.desc.trait_intro:0          "Throughout my upbringing I have shown that I am capable and have the temperament for battle. My"
  MTR_SWE.1003.desc.trait_ending_female:0  "and character all indicate that I have the makings of a shieldmaiden.\n\n"
@@ -84,7 +85,7 @@
  
  MTR_SWE.1003.desc.parents_legacy_intro_scared:0 "My hands tremble as I sigh. Despite my fear,"
  MTR_SWE.1003.desc.parents_legacy_intro_normal:0 "The air is still."
- MTR_SWE.1003.desc.parents_legacy_ending:0       "I would not be the first in my family to participate in the shield-wall. I have a legacy behind me.\n\n"
+ MTR_SWE.1003.desc.parents_legacy_ending:0       "I know that I would not be the first in my family to participate in the shield-wall - I have a legacy behind me.\n\n"
 
  MTR_SWE.1003.a:0    "Let me stand in the shield-wall!"
  MTR_SWE.1003.b:0    "Perhaps things are the way that they are for a reason..."

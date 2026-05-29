@@ -110,7 +110,7 @@ MTR_SWE_trigger_culture_allows_high_prowess = {
 # Either Parent is a shieldperson
 MTR_SWE_trigger_either_parent_shieldperson = {
 	OR = {
-		father = {has_trait = shieldmaiden}
-		mother = {has_trait = shieldmaiden}
+		father ?= {has_trait = shieldmaiden}
+		mother ?= {has_trait = shieldmaiden}
 	}
 }

@@ -1,4 +1,4 @@
-dlc_MTR_SWE = {
+﻿dlc_MTR_SWE = {
     key = "Martyr's Tweaks - Shieldmaiden Ward Event"
     type = minor
     priority = 1000

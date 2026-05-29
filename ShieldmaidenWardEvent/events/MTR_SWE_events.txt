@@ -1,4 +1,4 @@
-################
+﻿################
 # MTR - Shieldmaiden Ward Event
 ################
 
@@ -23,6 +23,8 @@ MTR_SWE.1001 = {
 	content_source = dlc_MTR_SWE
 	
 	trigger = {
+		#Make sure event is not disabled
+		NOT = { has_game_rule = MTR_SWE_eligibility_GR_deactivated }
 		MTR_SWE_trigger_is_valid_ward_gender = yes
 		OR = {
 			# Either training specifically martial...
@@ -38,7 +40,8 @@ MTR_SWE.1001 = {
 			MTR_SWE_trigger_either_parent_shieldperson = yes
 
 			# ...or their is a game-rule removing the requirements
-			# game_rule
+			has_game_rule = MTR_SWE_eligibility_GR_relaxed
+
 		}
 		OR = { #Is being trained/taught to some degree
 			any_relation = {
@@ -208,29 +211,32 @@ MTR_SWE.1002 = {
 			limit = { scope:child = { is_ai = yes } }
 			duel = {
 				skills = { martial prowess }
-				target = scope:child
-				30 = {
+				value = high_skill_rating
+				35 = {
 					compare_modifier = {
 						value = scope:duel_value
-						multiplier = 2.5
+						multiplier = 1.5
 					}
 					opinion_modifier = {
 						who = scope:child
 						opinion_target = scope:guardian
-						multiplier = 0.25
+						multiplier = 0.2
 						step = 5
 					}
-					modifier = { #if guardian is a shieldperson, bump odds
-						has_trait = shieldmaiden
-						add = 25
+					modifier = { #if guardian is a shieldperson, or a parent is, bump odds
+						OR = {
+							has_trait = shieldmaiden
+							scope:child = { MTR_SWE_trigger_either_parent_shieldperson = yes}
+						}
+						add = 15
 					}
 					modifier = {
 						scope:child = { has_trait = brave }
-						add = 25
+						add = 20
 					}
 					modifier = {
 						scope:child = { has_trait = ambitious }
-						add = 15
+						add = 10
 					}
 					modifier = {
 						scope:child = { has_trait = eccentric }
@@ -240,22 +246,28 @@ MTR_SWE.1002 = {
 						scope:child = {
 							MTR_SWE_trigger_sadistic_and_relevant = yes
 						}
-						add = 5
+						add = 15
 					}
 					desc = MTR_SWE_child_squiring_success_effect.desc
 					MTR_SWE_child_squiring_success_effect = yes
 				}
-				70 = {
+				65 = {
 					compare_modifier = {
 						value = scope:duel_value
-						multiplier = -2.5
+						multiplier = -1.5
 					}
 					opinion_modifier = {
 						who = scope:child
 						opinion_target = scope:guardian
-						multiplier = -0.25
+						multiplier = -0.2
 						step = 5
 					}
+
+					modifier = {
+						has_game_rule = MTR_SWE_odds_GR_increased
+						add = -30
+					}
+
 					modifier = { #Sadistic tendencies might be off-putting for non-sadistic faiths
 						scope:child = {
 							has_trait = sadistic
@@ -282,7 +294,7 @@ MTR_SWE.1002 = {
 					}
 					modifier = { #Cowards don't want to fight
 						scope:child = { has_trait = craven }
-						add = 25
+						add = 20
 					}
 					desc = MTR_SWE_child_squiring_failure_effect.desc
 					MTR_SWE_child_squiring_failure_effect = yes
@@ -362,7 +374,6 @@ MTR_SWE.1002 = {
 MTR_SWE.1003 = {
 	type = character_event
 	title = MTR_SWE.1003.t
-#	desc  = MTR_SWE.1003.desc
 	theme = martial
 
 	# Mod Content "pack"
@@ -496,8 +507,8 @@ MTR_SWE.1003 = {
 			60 = {
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = 2.5
-					min = -49
+					multiplier = 2
+					min = -59
 				}
 
 				modifier = {
@@ -534,8 +545,12 @@ MTR_SWE.1003 = {
 			40 = {
 				compare_modifier = {
 					value = scope:duel_value
-					multiplier = -2.5
-					min = -49
+					multiplier = -2
+					min = -39
+				}
+				modifier = {
+					has_game_rule = MTR_SWE_odds_GR_increased
+					add = -20
 				}
 				modifier = { # Liability in battle
 					add = 10

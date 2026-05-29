@@ -26,10 +26,22 @@ MTR_SWE_child_squiring_success_effect = {
 		limit = {
 			this != scope:child
 		}
+		add_opinion = {
+			target = scope:child
+			modifier = impressed_opinion
+			opinion = 20
+		}
 		send_interface_toast = {
 			type = event_toast_effect_good
-			title = MTR_SWE.1001.message
+			title = MTR_SWE.1001.message_good
 			left_icon = scope:child
+
+			scope:child = {
+				if = {
+					limit = { has_trait = shieldmaiden }
+					show_as_tooltip = { add_trait_force_tooltip = shieldmaiden }
+				}
+			}
 		}
 	}
 }
@@ -58,7 +70,7 @@ MTR_SWE_child_squiring_failure_effect = {
 		}
 		send_interface_toast = {
 			type = event_toast_effect_bad
-			title = MTR_SWE.1001.message
+			title = MTR_SWE.1001.message_bad
 			left_icon = scope:child
 		}
 	}
