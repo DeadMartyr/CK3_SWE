@@ -37,16 +37,55 @@ MTR_SWE_trigger_is_valid_ward_gender = {
 MTR_SWE_trigger_temperament = {
 	calc_true_if = {
 		amount >= 3
-		has_trait = arrogant
-		has_trait = eccentric
-		has_trait = brave
 		has_trait = ambitious
-		has_trait = vengeful # Culture or Religion check?
+		has_trait = arrogant
+		has_trait = brave
+		has_trait = eccentric
+		MTR_SWE_trigger_sadistic_and_relevant = yes
+		MTR_SWE_trigger_vengeful_and_relevant = yes
 		has_trait = wrathful
-		has_trait = sadistic # Culture or Religion check?
+		MTR_SWE_trigger_zealous_and_relevant = yes
 		has_trait = strong
 		has_trait = physique_good_3
 		has_trait = physique_good_2
+	}
+}
+
+MTR_SWE_trigger_zealous_and_relevant = {
+	AND = {
+		has_trait = zealous
+		faith = {
+			OR = {
+				has_doctrine = tenet_warmonger
+				has_doctrine = tenet_unrelenting_faith
+			}
+		}
+	}
+}
+
+MTR_SWE_trigger_vengeful_and_relevant = {
+	AND = {
+		has_trait = vengeful
+		faith = {
+			OR = {
+				trait_is_virtue = vengeful
+				has_doctrine = tenet_fp3_fedayeen
+			}
+		}
+	}
+}
+
+MTR_SWE_trigger_sadistic_and_relevant = {
+	AND = {
+		has_trait = sadistic
+		faith = {
+			OR = {
+				trait_is_virtue = sadistic
+				has_doctrine = tenet_human_sacrifice
+				has_doctrine = tenet_cranial_trophies
+				has_doctrine = tenet_exaltation_of_pain
+			}
+		}
 	}
 }
 

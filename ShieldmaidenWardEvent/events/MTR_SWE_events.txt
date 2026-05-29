@@ -92,9 +92,115 @@ MTR_SWE.1002 = {
 	immediate = { save_scope_as = guardian }
 
 	desc = {
+		first_valid = {
+			triggered_desc = {
+				limit = { #Both Ward and guardian have cultures with shieldmaidens
+					culture = { has_cultural_parameter = has_access_to_shieldmaidens }
+				}
+				desc = MTR_SWE.1002.start.culture_both
+			}
+			triggered_desc = {
+				limit = { #Guardian has culture without shieldmaidens
+					NOT = { culture = { has_cultural_parameter = has_access_to_shieldmaidens } }
+				}
+				desc = MTR_SWE.1002.start.culture_child_only
+			}
+		}
 
-		
-		
+		# Justify Martial Education
+		triggered_desc = {
+			limit = { scope:child = { has_focus = education_martial } }
+			desc = MTR_SWE.1002.desc.education_martial
+		}
+
+		# Justify Personality
+		scope_child = {
+			triggered_desc = {
+				limit = { MTR_SWE_trigger_temperament = yes }
+				desc = {
+					desc = MTR_SWE.1002.desc.trait_intro
+
+					triggered_desc = {
+						limit = { has_trait = ambitious}
+						desc = MTR_SWE.1002.desc.trait_ambitious
+					}
+					triggered_desc = {
+						limit = { has_trait = arrogant}
+						desc = MTR_SWE.1002.desc.trait_arrogant
+					}
+					triggered_desc = {
+						limit = { has_trait = brave}
+						desc = MTR_SWE.1002.desc.trait_brave
+					}
+					triggered_desc = {
+						limit = { has_trait = eccentric}
+						desc = MTR_SWE.1002.desc.trait_eccentric
+					}
+					triggered_desc = {
+						limit = { MTR_SWE_trigger_sadistic_and_relevant = yes}
+						desc = MTR_SWE.1002.desc.trait_sadistic
+					}
+					triggered_desc = {
+						limit = {
+							OR = {
+								has_trait = strong
+								has_trait = physique_good_3
+								has_trait = physique_good_2
+							}
+						}
+						desc = MTR_SWE.1002.desc.trait_strong
+					}
+					triggered_desc = {
+						limit = { MTR_SWE_trigger_vengeful_and_relevant = yes}
+						desc = MTR_SWE.1002.desc.trait_vengeful
+					}
+					triggered_desc = {
+						limit = { has_trait = wrathful}
+						desc = MTR_SWE.1002.desc.trait_wrathful
+					}
+					triggered_desc = {
+						limit = { MTR_SWE_trigger_zealous_and_relevant = yes}
+						desc = MTR_SWE.1002.desc.trait_zealous
+					}
+
+					first_valid = {
+						triggered_desc = {
+							limit = { is_female = yes }
+							desc = MTR_SWE.1002.desc.trait_ending_female
+						}
+						triggered_desc = {
+							limit = { is_male = yes }
+							desc = MTR_SWE.1002.desc.trait_ending_male
+						}
+					}
+
+				}
+			}
+		}
+
+
+		# Justify Parents' Legacy
+		scope:child = {
+			triggered_desc = {
+				limit = { MTR_SWE_trigger_either_parent_shieldperson = yes }
+				
+				desc = {
+					first_valid = {
+						triggered_desc = {
+							limit = { has_trait = craven }
+						}
+						desc = MTR_SWE.1002.desc.parents_legacy_intro_scared
+					}
+					first_valid = {
+						triggered_desc = {
+							limit = { NOT = { has_trait = craven } }
+						}
+						desc = MTR_SWE.1002.desc.parents_legacy_intro_normal
+					}
+					desc = MTR_SWE.1002.desc.parents_legacy_ending
+				}
+			}
+		}
 	}
 
 

@@ -43,15 +43,18 @@
 
  MTR_SWE.1002.t:0    "Makings of a Warrior"
  MTR_SWE.1002.desc:0 "Description of the event from the Guardian's POV"
+ MTR_SWE.1002.start.culture_both:0 "Your [guardian.GetRelationToString( child )] [child.GetFirstName|U] is nearing their coming-of-age and there is enough promise that you believe that they may be able to participate in combat.  Many notable warriors started as exceptions and have served their realms well, perhaps this child may join those exceptions...\n\n"
+ MTR_SWE.1002.start.culture_child_only:0 "Your [guardian.GetRelationToString( child )] [child.GetFirstName|U] is nearing their coming-of-age and - while the idea seems a bit foreign to you - the child does stem from a culture where gender does not necessarily prohibit participating in battle. Exceptions could be made and perhaps it's an idea worth entertaining...\n\n"
+
  MTR_SWE.1002.desc.trait_intro:0          "Throughout your experiences with your [guardian.GetRelationToString( child )] [child.GetFirstName|U], it has become clear that [child.GetSheHe] has a temperament that may be worthy of battle; [child.GetHerHis|U]"
+ MTR_SWE.1002.desc.trait_ambitious:0      "ambition,"
  MTR_SWE.1002.desc.trait_arrogant:0       "audaciousness,"
  MTR_SWE.1002.desc.trait_brave:0          "courage,"
  MTR_SWE.1002.desc.trait_eccentric:0      "eccentricity,"
- MTR_SWE.1002.desc.trait_ambitious:0      "ambition,"
- MTR_SWE.1002.desc.trait_vengeful:0       "holy vengeance,"
- MTR_SWE.1002.desc.trait_wrath:0          "wrath,"
  MTR_SWE.1002.desc.trait_sadistic:0       "mercilessness,"
  MTR_SWE.1002.desc.trait_strong:0         "strength,"
+ MTR_SWE.1002.desc.trait_vengeful:0       "holy vengeance,"
+ MTR_SWE.1002.desc.trait_wrath:0          "wrath,"
  MTR_SWE.1002.desc.trait_ending_female:0  "and character all indicate the makings of a shieldmaiden.\n\n"
  MTR_SWE.1002.desc.trait_ending_male:0    "and character all indicate the makings of a shieldswain.\n\n"
  
