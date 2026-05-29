@@ -9,6 +9,7 @@ MTR_SWE_child_squiring_success_effect = {
 			wrathful  = miniscule_stress_impact_loss
 			eccentric = miniscule_stress_impact_loss
 			ambitious = miniscule_stress_impact_loss
+			craven    = major_stress_impact_gain
 		}
 		# Only people that care are the house-head and the parents
 		house = {
@@ -37,7 +38,10 @@ MTR_SWE_child_squiring_success_effect = {
 MTR_SWE_child_squiring_failure_effect = {
 	# Only people that care are the house-head and the parents
 	scope:child = {
-		stress_impact = medium_stress_impact_gain
+		stress_impact = {
+			base = medium_stress_impact_gain
+			craven = minor_stress_impact_loss
+		}
 		house = {
 			house_head = {
 				add_to_list = MTR_SWE_failure_message
@@ -56,12 +60,6 @@ MTR_SWE_child_squiring_failure_effect = {
 			type = event_toast_effect_bad
 			title = MTR_SWE.1001.message
 			left_icon = scope:child
-
-			show_as_tooltip = {
-				scope:child = {
-					stress_impact = medium_stress_impact_gain
-				}
-			}
 		}
 	}
 }

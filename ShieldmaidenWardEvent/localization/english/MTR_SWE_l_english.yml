@@ -17,7 +17,7 @@
  game_rule_category_MTR: "#tooltip:MTR_series_name_w_desc_tt #color_goldy_yellow $MTR_series_short_name$#!#!"
 
  rule_MTR_SWE_eligibilty_GR:0 "#tooltip:MTR_SWE_mod_name_w_desc_tt #color_goldy_yellow $MTR_SWE_mod_short_name$:#!#! Eligible Wards"
- setting_MTR_SWE eligibilty_GR_default:0      "Default"
+ setting_MTR_SWE_eligibilty_GR_default:0      "Default"
  setting_MTR_SWE_eligibilty_GR_default_desc:0 "The event will be available to all wards with martial education OR wards with a parent who is a shieldperson OR wards with enough traits that align with knighthood or relevant militant faiths."
  setting_MTR_SWE_eligibilty_GR_relaxed:0      "Relaxed"
  setting_MTR_SWE_eligibilty_GR_relaxed_desc:0 "The event will be available to ALL wards who are of cultures with shieldpersons."
@@ -31,10 +31,10 @@
  setting_MTR_SWE_odds_GR_increased_desc:0 "The chances for successful attempts are increased. Most wards will have a good chance to succeed."
 
  #EFFECTS
- MTR_SWE_child_squiring_success_effect.desc:0 "[child.GetNameNoTooltip|U] has earned their place in the shield-wall!"
- MTR_SWE_child_squiring_failure_effect.desc:0 "[child.GetNameNoTooltip|U] has proven that they aren't meant for combat."
- MTR_SWE_self_squiring_success_effect.desc:0  "[child.GetNameNoTooltip|U] has earned their place in the shield-wall!"
- MTR_SWE_self_squiring_failure_effect.desc:0  "[child.GetNameNoTooltip|U] just isn't meant for combat."
+ MTR_SWE_child_squiring_success_effect.desc:0 "[child.GetFirstNameNoTooltip|U] has earned their place in the shield-wall!"
+ MTR_SWE_child_squiring_failure_effect.desc:0 "[child.GetFirstNameNoTooltip|U] just isn't meant for combat..."
+ MTR_SWE_self_squiring_success_effect.desc:0  "I will earn my place in the shield-wall!"
+ MTR_SWE_self_squiring_failure_effect.desc:0  "Maybe I'm just not meant for combat..."
 
  #EVENTS
 
@@ -43,18 +43,19 @@
 
  MTR_SWE.1002.t:0    "Makings of a Warrior"
  MTR_SWE.1002.desc:0 "Description of the event from the Guardian's POV"
- MTR_SWE.1002.start.culture_both:0 "Your [guardian.GetRelationToString( child )] [child.GetFirstName|U] is nearing their coming-of-age and there is enough promise that you believe that they may be able to participate in combat.  Many notable warriors started as exceptions and have served their realms well, perhaps this child may join those exceptions...\n\n"
- MTR_SWE.1002.start.culture_child_only:0 "Your [guardian.GetRelationToString( child )] [child.GetFirstName|U] is nearing their coming-of-age and - while the idea seems a bit foreign to you - the child does stem from a culture where gender does not necessarily prohibit participating in battle. Exceptions could be made and perhaps it's an idea worth entertaining...\n\n"
+ MTR_SWE.1002.start.culture_both:0 "Your ward [child.GetFirstName|U] is nearing their coming-of-age and shows enough promise that you believe that they may be able to participate in combat.  Many notable warriors started as exceptions and have served their realms well, perhaps this child may join those exceptions...\n\n"
+ MTR_SWE.1002.start.culture_child_only:0 "Your ward [child.GetFirstName|U] is nearing their coming-of-age and - while the idea seems a bit foreign to you - the child does stem from a culture where gender does not necessarily prohibit participating in battle. Exceptions could be made and perhaps it's an idea worth entertaining...\n\n"
 
- MTR_SWE.1002.desc.trait_intro:0          "Throughout your experiences with your [guardian.GetRelationToString( child )] [child.GetFirstName|U], it has become clear that [child.GetSheHe] has a temperament that may be worthy of battle; [child.GetHerHis|U]"
+ MTR_SWE.1002.desc.trait_intro:0          "Throughout your experiences with [child.GetFirstNameNoTooltip|U], it has become clear that [child.GetSheHe] has a temperament that may be worthy of battle; [child.GetHerHis|U]"
  MTR_SWE.1002.desc.trait_ambitious:0      "ambition,"
  MTR_SWE.1002.desc.trait_arrogant:0       "audaciousness,"
  MTR_SWE.1002.desc.trait_brave:0          "courage,"
  MTR_SWE.1002.desc.trait_eccentric:0      "eccentricity,"
  MTR_SWE.1002.desc.trait_sadistic:0       "mercilessness,"
  MTR_SWE.1002.desc.trait_strong:0         "strength,"
- MTR_SWE.1002.desc.trait_vengeful:0       "holy vengeance,"
- MTR_SWE.1002.desc.trait_wrath:0          "wrath,"
+ MTR_SWE.1002.desc.trait_vengeful:0       "vindictiveness,"
+ MTR_SWE.1002.desc.trait_wrathful:0       "wrath,"
+ MTR_SWE.1002.desc.trait_zealous:0        "zealotry,"
  MTR_SWE.1002.desc.trait_ending_female:0  "and character all indicate the makings of a shieldmaiden.\n\n"
  MTR_SWE.1002.desc.trait_ending_male:0    "and character all indicate the makings of a shieldswain.\n\n"
  
@@ -62,13 +63,28 @@
  
  MTR_SWE.1002.desc.parents_legacy_intro_scared:0 "Despite their bouts of cowardice, young"
  MTR_SWE.1002.desc.parents_legacy_intro_normal:0 "Young"
- MTR_SWE.1002.desc.parents_legacy_ending:0       "[child.GetFirstName|U] has a legacy to uphold which calls [child.GetHerHim] to participate in the shield-wall.\n\n"
+ MTR_SWE.1002.desc.parents_legacy_ending:0       "[child.GetFirstNameNoTooltip|U] has a legacy to uphold which calls [child.GetHerHim] to participate in the shield-wall.\n\n"
 
  MTR_SWE.1002.a:0    "Allow them to assist and squire in battle."
  MTR_SWE.1002.b:0    "Things are the way that they are for a reason."
 
  #Ward POV
- MTR_SWE.1003.t:0    "Dreams of Combat"
+ MTR_SWE.1003.t:0    "Makings of a Warrior"
  MTR_SWE.1003.desc:0 "Description of the event from the Ward's POV"
- MTR_SWE.1003.a:0    "Let me stand in the shield wall!"
+
+ MTR_SWE.1003.start:0  "Often I find myself dreaming of standing on the battlefield. When I finish my studies early, I find a secluded spot and practice swinging a blade. I have been practicing for hours and been lost in thought - but that is broken as I sense someone behind me.\n\nI turn to see my guardian [guardian.GetFirstName|U] standing before me.  Before I can explain, [guardian.GetSheHe|U] speaks:\n\n"
+ MTR_SWE.1003.start.culture_both:0 ""You show enough promise that I believe that you may be able to participate in battle," [guardian.GetSheHeNoTooltip|L] says, "Many notable warriors actually started as exceptions and have served their realms well; I will vouch for your capabilities if you wish to become one of those exceptions..."\n\n"
+ MTR_SWE.1003.start.culture_child_only:0 ""While the idea is foreign to me I understand that you may wish to participate in battle," [guardian.GetSheHe|U] says, "You may be a [GetWomanMan|L]... but I have seen enough that I will vouch for your capabilities."\n\n"
+
+ MTR_SWE.1003.desc.trait_intro:0          "Throughout my upbringing I have shown that I am capable and have the temperament for battle. My"
+ MTR_SWE.1003.desc.trait_ending_female:0  "and character all indicate that I have the makings of a shieldmaiden.\n\n"
+ MTR_SWE.1003.desc.trait_ending_male:0    "and character all indicate that I have the makings of a shieldswain.\n\n"
+ 
+ MTR_SWE.1003.desc.education_martial:0    "According to the customs of my people, martial study awards the right to prove my worth in combat should I desire to do so.\n\n"
+ 
+ MTR_SWE.1003.desc.parents_legacy_intro_scared:0 "My hands tremble as I sigh. Despite my fear,"
+ MTR_SWE.1003.desc.parents_legacy_intro_normal:0 "The air is still."
+ MTR_SWE.1003.desc.parents_legacy_ending:0       "I would not be the first in my family to participate in the shield-wall. I have a legacy behind me.\n\n"
+
+ MTR_SWE.1003.a:0    "Let me stand in the shield-wall!"
  MTR_SWE.1003.b:0    "Perhaps things are the way that they are for a reason..."
