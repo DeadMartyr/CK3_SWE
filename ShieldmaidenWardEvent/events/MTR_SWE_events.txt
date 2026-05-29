@@ -493,7 +493,7 @@ MTR_SWE.1003 = {
 			value = decent_skill_rating
 
 			# Succeed
-			50 = {
+			60 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = 2.5
@@ -531,7 +531,7 @@ MTR_SWE.1003 = {
 				MTR_SWE_child_squiring_success_effect = yes
 			}
 			# Fail
-			50 = {
+			40 = {
 				compare_modifier = {
 					value = scope:duel_value
 					multiplier = -2.5
