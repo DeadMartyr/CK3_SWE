@@ -16,13 +16,13 @@
  #GAMERULES
  game_rule_category_MTR: "#tooltip:MTR_series_name_w_desc_tt #color_goldy_yellow $MTR_series_short_name$#!#!"
 
- rule_MTR_SWE_eligibilty_GR:0 "#tooltip:MTR_SWE_mod_name_w_desc_tt #color_goldy_yellow $MTR_SWE_mod_short_name$:#!#! Eligible Wards"
- setting_MTR_SWE_eligibilty_GR_default:0      "Default"
- setting_MTR_SWE_eligibilty_GR_default_desc:0 "The event will be available to all wards with martial education OR wards with a parent who is a shieldperson OR wards with enough traits that align with knighthood or relevant militant faiths."
- setting_MTR_SWE_eligibilty_GR_relaxed:0      "Relaxed"
- setting_MTR_SWE_eligibilty_GR_relaxed_desc:0 "The event will be available to ALL wards who are of cultures with shieldpersons."
- setting_MTR_SWE_eligibilty_GR_deactivated:0      "Deactivated"
- setting_MTR_SWE_eligibilty_GR_deactivated_desc:0 "The event will be disabled in all cases."
+ rule_MTR_SWE_eligibility_GR:0 "#tooltip:MTR_SWE_mod_name_w_desc_tt #color_goldy_yellow $MTR_SWE_mod_short_name$:#!#! Eligible Wards"
+ setting_MTR_SWE_eligibility_GR_default:0      "Default"
+ setting_MTR_SWE_eligibility_GR_default_desc:0 "The event will be available to all wards with martial education OR wards with a parent who is a shieldperson OR wards with enough traits that align with knighthood or relevant militant faiths."
+ setting_MTR_SWE_eligibility_GR_relaxed:0      "Relaxed"
+ setting_MTR_SWE_eligibility_GR_relaxed_desc:0 "The event will be available to ALL wards who are of cultures with shieldpersons."
+ setting_MTR_SWE_eligibility_GR_deactivated:0      "Deactivated"
+ setting_MTR_SWE_eligibility_GR_deactivated_desc:0 "The event will be disabled in all cases."
 
  rule_MTR_SWE_odds_GR:0 "#tooltip:MTR_SWE_mod_name_w_desc_tt #color_goldy_yellow $MTR_SWE_mod_short_name$:#!#! Successful Duel Odds"
  setting_MTR_SWE_odds_GR_normal:0      "Normal Odds"

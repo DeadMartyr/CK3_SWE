@@ -1,42 +1,30 @@
-﻿MTR_ATS_GR = {
-	default = MTR_ATS_GR_00
+﻿MTR_SWE_eligibility_GR = {
+	default = MTR_SWE_eligibility_GR_default
 
 	# What categories this game rule belongs too
 	categories = {
 		culture MTR
 	}
 
-	# Default, no flag, no effect.
-	# Tradition limit is as normal
-	MTR_ATS_GR_00 = {}
- 
-	MTR_ATS_GR_01 = {}
+	#Default
+	MTR_SWE_eligibility_GR_default     = {}
+	#Event for ALL Wards
+	MTR_SWE_eligibility_GR_relaxed     = {}
+	#Event Disabled
+	MTR_SWE_eligibility_GR_deactivated = {} 
+}
 
-	MTR_ATS_GR_02 = {}
 
-	MTR_ATS_GR_03 = {}
+MTR_SWE_odds_GR = {
+	default = MTR_SWE_odds_GR_normal
 
-	MTR_ATS_GR_04 = {}
+	# What categories this game rule belongs too
+	categories = {
+		culture MTR
+	}
 
-	MTR_ATS_GR_05 = {}
-
-	MTR_ATS_GR_06 = {}
-
-	MTR_ATS_GR_07 = {}
-
-	MTR_ATS_GR_08 = {}
-
-	MTR_ATS_GR_09 = {}
-
-	MTR_ATS_GR_10 = {}
-
-	MTR_ATS_GR_11 = {}
-
-	MTR_ATS_GR_12 = {}
-
-	MTR_ATS_GR_13 = {}
-
-	MTR_ATS_GR_14 = {}
-
-	MTR_ATS_GR_15 = {}
+	#Normal odds
+	MTR_SWE_odds_GR_normal     = {}
+	#Increased odds
+	MTR_SWE_odds_GR_increased  = {}
 }
