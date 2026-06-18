@@ -30,6 +30,12 @@
  setting_MTR_SWE_odds_GR_increased:0      "Increased Odds"
  setting_MTR_SWE_odds_GR_increased_desc:0 "The chances for successful attempts are increased. Most wards will have a good chance to succeed."
 
+ rule_MTR_SWE_widertraditions_GR:0 "#tooltip:MTR_SWE_mod_name_w_desc_tt #color_goldy_yellow $MTR_SWE_mod_short_name$:#!#! Wider Traditions"
+ setting_MTR_SWE_widertraditions_GR_deactivated:0      "Default"
+ setting_MTR_SWE_widertraditions_GR_deactivated_desc:0 "The events are available only to traditions that specifically involve shieldmaidens."
+ setting_MTR_SWE_widertraditions_GR_activated:0      "Widened Scope"
+ setting_MTR_SWE_widertraditions_GR_activated_desc:0 "Traditions that involve a 'non-martial-gender' like 'Bushido' or 'Fragile Peace' will get the event to become a shieldperson, even if the traditions themselves do not grant the trait."
+
  #EFFECTS
  MTR_SWE_child_squiring_success_effect.desc:0 "[child.GetFirstNameNoTooltip|U] has earned their place in the shield-wall!"
  MTR_SWE_child_squiring_failure_effect.desc:0 "[child.GetFirstNameNoTooltip|U] just isn't meant for combat..."
@@ -102,12 +108,12 @@
  MTR_SWE_memory_desc_third_perspective_3:0 "[child.GetName|U] proved themself in [guardian.GetNamePossessive|U] trial to be worthy as a [GetTrait('shieldmaiden').GetName(child.Self)|LV]!"
  MTR_SWE_memory:0 "became a [GetTrait('shieldmaiden').GetName(child.Self)|LV]"
 
- MTR_SWE_memory_fail_desc:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], I ended up falling short..."
- MTR_SWE_memory_fail_desc_second_perspective:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], you ended up falling short..."
- MTR_SWE_memory_fail_desc_third_perspective:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], [child.GetName|U] ended up falling short..."
+ MTR_SWE_memory_fail_desc:0 "While being given a chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], I ended up falling short..."
+ MTR_SWE_memory_fail_desc_second_perspective:0 "While being given a chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], you ended up falling short..."
+ MTR_SWE_memory_fail_desc_third_perspective:0 "While being given a chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], [child.GetName|U] ended up falling short..."
  MTR_SWE_memory_fail:0 "failed to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV]"
  
- MTR_SWE_memory_skip_desc:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], I ended up deciding not to."
- MTR_SWE_memory_skip_desc_second_perspective:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], you ended up deciding not to..."
- MTR_SWE_memory_skip_desc_third_perspective:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], [child.GetName|U] ended up deciding not to..."
+ MTR_SWE_memory_skip_desc:0 "While being given a chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], I ended up deciding not to."
+ MTR_SWE_memory_skip_desc_second_perspective:0 "While being given a chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], you ended up deciding not to..."
+ MTR_SWE_memory_skip_desc_third_perspective:0 "While being given a chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], [child.GetName|U] ended up deciding not to..."
  MTR_SWE_memory_skip:0 "decided to not become a [GetTrait('shieldmaiden').GetName(child.Self)|LV]"

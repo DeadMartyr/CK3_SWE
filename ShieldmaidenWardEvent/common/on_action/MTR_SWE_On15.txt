@@ -8,9 +8,17 @@ on_15th_birthday = {
 
 # Custom On-Action
 MTR_SWE_actions = {
-	trigger = {	
+	trigger = {
 		has_fp1_dlc_trigger = yes
-		culture = { has_cultural_parameter = has_access_to_shieldmaidens }
+		culture = {
+			OR = { # Shield Maiden Culture OR Culture with non-martial gender stuff and a gamerule
+				has_cultural_parameter = has_access_to_shieldmaidens
+				AND = { # Access to Bushido / Fragile Peace
+					has_game_rule = MTR_SWE_widertraditions_GR_activated
+					has_cultural_parameter = non_admin_close_family_non_martial_gender_knights_in_defensive_wars
+				}
+			}
+		}
 		trigger_if = { # Determined by Cultural Pillars
 			limit = { has_dlc_feature = diverge_culture }
 			OR = {

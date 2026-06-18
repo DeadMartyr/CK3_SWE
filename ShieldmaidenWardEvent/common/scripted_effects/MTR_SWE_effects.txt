@@ -28,6 +28,9 @@ MTR_SWE_child_squiring_success_effect = {
 		every_parent = {
 			add_to_list = MTR_SWE_success_message
 		}
+		scope:guardian = {
+			add_to_list = MTR_SWE_success_message
+		}
 	}
 	every_in_list = {
 		list = MTR_SWE_success_message
@@ -76,6 +79,9 @@ MTR_SWE_child_squiring_failure_effect = {
 			}
 		}
 		every_parent = {
+			add_to_list = MTR_SWE_failure_message
+		}
+		scope:guardian = {
 			add_to_list = MTR_SWE_failure_message
 		}
 	}

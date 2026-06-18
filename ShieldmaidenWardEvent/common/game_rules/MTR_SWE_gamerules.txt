@@ -28,3 +28,18 @@ MTR_SWE_odds_GR = {
 	#Increased odds
 	MTR_SWE_odds_GR_increased  = {}
 }
+
+# Event available for traditions like Bushido/Fragile Peace which target non-martial gender
+MTR_SWE_widertraditions_GR = {
+	default = MTR_SWE_widertraditions_GR_deactivated
+
+	# What categories this game rule belongs too
+	categories = {
+		culture MTR
+	}
+
+	# Default - ONLY shieldmaiden traditions
+	MTR_SWE_widertraditions_GR_deactivated = {}
+	# Access granted to non-shieldmaiden traditions that involve non-martial gender
+	MTR_SWE_widertraditions_GR_activated = {}
+}

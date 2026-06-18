@@ -5,7 +5,15 @@ MTR_SWE_trigger_is_valid_ward_gender = {
 
 	#Gender Logic
 	has_fp1_dlc_trigger = yes
-	culture = { has_cultural_parameter = has_access_to_shieldmaidens }
+	culture = {
+		OR = {
+			has_cultural_parameter = has_access_to_shieldmaidens
+			AND = { #Gamerule to allow Fragile Peace / Bushido effect to use this event pack
+				has_game_rule = MTR_SWE_widertraditions_GR_activated
+				has_cultural_parameter = non_admin_close_family_non_martial_gender_knights_in_defensive_wars
+			}
+		}
+	}
 	trigger_if = { # Determined by Cultural Pillars
 		limit = { has_dlc_feature = diverge_culture }
 		OR = {
