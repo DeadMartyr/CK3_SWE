@@ -590,6 +590,15 @@ MTR_SWE.1003 = {
 	# Accept Social Norms
 	option = {
 		name = MTR_SWE.1003.b
+	
+		# Create the memory for the child
+		create_character_memory = {
+			type = MTR_SWE_memory_skip
+			participants = {
+				child    = scope:child
+				guardian = scope:guardian
+			}
+		}
 
 		#Stress relief
 		stress_impact = {

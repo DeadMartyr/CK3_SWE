@@ -1,0 +1,89 @@
+MTR_SWE_memory = {
+	categories = { positive childhood }
+	icon = "martial.dds"
+	description = {
+		random_valid = {
+			desc = MTR_SWE_memory_desc_1
+			desc = MTR_SWE_memory_desc_2
+			desc = MTR_SWE_memory_desc_3	
+		}
+	}
+
+	second_perspective_description = {
+		random_valid = {
+			desc = MTR_SWE_memory_desc_second_perspective_1
+			desc = MTR_SWE_memory_desc_second_perspective_2
+			desc = MTR_SWE_memory_desc_second_perspective_3
+		}
+	}
+
+	third_perspective_description = {
+		random_valid = {
+			desc = MTR_SWE_memory_desc_third_perspective_1
+			desc = MTR_SWE_memory_desc_third_perspective_2
+			desc = MTR_SWE_memory_desc_third_perspective_3
+		}
+	}
+
+	participants = { child guardian }
+
+	duration = {
+		years = memory_default_duration
+	}
+}
+
+MTR_SWE_memory_fail = {
+	categories = { negative childhood }
+	icon = "martial.dds"
+	description = {
+		first_valid = {
+			desc = MTR_SWE_memory_fail_desc
+		}
+	}
+
+	second_perspective_description = {
+		first_valid = {
+			desc = MTR_SWE_memory_fail_desc_second_perspective
+		}
+	}
+
+	third_perspective_description = {
+		first_valid = {
+			desc = MTR_SWE_memory_fail_desc_third_perspective
+		}
+	}
+
+	participants = { child guardian }
+
+	duration = {
+		years = memory_default_duration
+	}
+}
+
+MTR_SWE_memory_skip = {
+	categories = { negative childhood }
+	icon = "martial.dds"
+	description = {
+		first_valid = {
+			desc = MTR_SWE_memory_skip_desc
+		}
+	}
+
+	second_perspective_description = {
+		first_valid = {
+			desc = MTR_SWE_memory_skip_desc_second_perspective
+		}
+	}
+
+	third_perspective_description = {
+		first_valid = {
+			desc = MTR_SWE_memory_skip_desc_third_perspective
+		}
+	}
+
+	participants = { child guardian }
+
+	duration = {
+		years = memory_default_duration
+	}
+}

@@ -89,3 +89,25 @@
 
  MTR_SWE.1003.a:0    "Let me stand in the shield-wall!"
  MTR_SWE.1003.b:0    "Perhaps things are the way that they are for a reason..."
+
+ #MEMORIES
+ MTR_SWE_memory_desc_1:0 "[guardian.GetName|U] vouched for me to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV]!"
+ MTR_SWE_memory_desc_second_perspective_1:0 "[guardian.GetName|U] vouched for you to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV]!"
+ MTR_SWE_memory_desc_third_perspective_1:0 "[guardian.GetName|U] vouched for [child.GetName|U] to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV]!"
+ MTR_SWE_memory_desc_2:0 "I became a [GetTrait('shieldmaiden').GetName(child.Self)|LV] with [guardian.GetNamePossessive|U] support!"
+ MTR_SWE_memory_desc_second_perspective_2:0 "You became a [GetTrait('shieldmaiden').GetName(child.Self)|LV] with [guardian.GetNamePossessive|U] support!"
+ MTR_SWE_memory_desc_third_perspective_2:0 "[child.GetName|U] became a [GetTrait('shieldmaiden').GetName(child.Self)|LV] with [guardian.GetNamePossessive|U] support!"
+ MTR_SWE_memory_desc_3:0 "I proved myself in [guardian.GetNamePossessive|U] trial to be worthy as a [GetTrait('shieldmaiden').GetName(child.Self)|LV]!"
+ MTR_SWE_memory_desc_second_perspective_3:0 "You proved yourself in [guardian.GetNamePossessive|U] trial to be worthy as a [GetTrait('shieldmaiden').GetName(child.Self)|LV]!"
+ MTR_SWE_memory_desc_third_perspective_3:0 "[child.GetName|U] proved themself in [guardian.GetNamePossessive|U] trial to be worthy as a [GetTrait('shieldmaiden').GetName(child.Self)|LV]!"
+ MTR_SWE_memory:0 "became a [GetTrait('shieldmaiden').GetName(child.Self)|LV]"
+
+ MTR_SWE_memory_fail_desc:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], I ended up falling short..."
+ MTR_SWE_memory_fail_desc_second_perspective:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], you ended up falling short..."
+ MTR_SWE_memory_fail_desc_third_perspective:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], [child.GetName|U] ended up falling short..."
+ MTR_SWE_memory_fail:0 "failed to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV]"
+ 
+ MTR_SWE_memory_skip_desc:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], I ended up deciding not to."
+ MTR_SWE_memory_skip_desc_second_perspective:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], you ended up deciding not to..."
+ MTR_SWE_memory_skip_desc_third_perspective:0 "While being given chance to become a [GetTrait('shieldmaiden').GetName(child.Self)|LV] by [guardian.GetName|U], [child.GetName|U] ended up deciding not to..."
+ MTR_SWE_memory_skip:0 "decided to not become a [GetTrait('shieldmaiden').GetName(child.Self)|LV]"

@@ -11,6 +11,14 @@ MTR_SWE_child_squiring_success_effect = {
 			ambitious = miniscule_stress_impact_loss
 			craven    = major_stress_impact_gain
 		}
+		# Create the memory for the child
+		create_character_memory = {
+			type = MTR_SWE_memory
+			participants = {
+				child    = scope:child
+				guardian = scope:guardian
+			}
+		}
 		# Only people that care are the house-head and the parents
 		house = {
 			house_head = {
@@ -53,6 +61,14 @@ MTR_SWE_child_squiring_failure_effect = {
 		stress_impact = {
 			base = medium_stress_impact_gain
 			craven = minor_stress_impact_loss
+		}
+		# Create the memory for the child
+		create_character_memory = {
+			type = MTR_SWE_memory_fail
+			participants = {
+				child    = scope:child
+				guardian = scope:guardian
+			}
 		}
 		house = {
 			house_head = {
